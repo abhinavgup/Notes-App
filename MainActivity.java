@@ -84,5 +84,17 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+      
+       listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-       
+                final int ab=i;
+
+                new AlertDialog.Builder(MainActivity.this)
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .setTitle("Are you sure ")
+                        .setMessage(" Do you want to delete it")
+                        .setPositiveButton("Yes",new DialogInterface.OnClickListener(){
+
+                           
