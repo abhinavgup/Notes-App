@@ -97,4 +97,34 @@ public class MainActivity extends AppCompatActivity {
                         .setMessage(" Do you want to delete it")
                         .setPositiveButton("Yes",new DialogInterface.OnClickListener(){
 
-                           
+            
+          @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                note.remove(ab);
+                                  arrayAdapter.notifyDataSetChanged();
+                                SharedPreferences sharedPreferences=getApplicationContext().getSharedPreferences("com.example.hp.appnotes",Context.MODE_PRIVATE);
+                                HashSet<String>Set=new HashSet<String>(MainActivity.note);
+
+                                sharedPreferences.edit().putStringSet("notes",Set).apply();
+
+
+                            }
+                        })
+                        .setNegativeButton("No",null)
+                         .show();
+
+
+
+                return true;
+            }
+        });
+
+
+
+
+    }
+}
+
+
+       
+
