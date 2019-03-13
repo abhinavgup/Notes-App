@@ -29,3 +29,16 @@ public class notesactivity extends AppCompatActivity {
 
             editText.setText(MainActivity.note.get(noteid));
         }
+        else{
+
+            MainActivity.note.add("");
+            noteid=MainActivity.note.size()-1;
+            MainActivity.arrayAdapter.notifyDataSetChanged();
+        }
+
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
