@@ -54,4 +54,15 @@ public class notesactivity extends AppCompatActivity {
 
 
             }
+            
+           @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+
+    }
+}
+
 
