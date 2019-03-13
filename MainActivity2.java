@@ -41,4 +41,17 @@ public class notesactivity extends AppCompatActivity {
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
             }
+        
+            @Override
+          public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                MainActivity.note.set(noteid,String.valueOf(charSequence));
+                MainActivity.arrayAdapter.notifyDataSetChanged();
+                SharedPreferences sharedPreferences=getApplicationContext().getSharedPreferences("com.example.hp.appnotes", Context.MODE_PRIVATE);
+                HashSet<String> Set=new HashSet<String>(MainActivity.note);
+
+                sharedPreferences.edit().putStringSet("notes",Set).apply();
+
+
+            }
 
